@@ -13,6 +13,8 @@ class Animal:
     def feed(self) -> int:
         if self.is_hungry:
             print(f"Eating {self.appetite} food points...")
+        else:
+            return 0
         self.is_hungry = False
         return self.appetite
 
@@ -37,6 +39,6 @@ def feed_animals(lst: list) -> int:
     result = 0
     for animal in lst:
         if animal.is_hungry:
-            result += animal.appetite
+            result += animal.feed()
 
     return result
